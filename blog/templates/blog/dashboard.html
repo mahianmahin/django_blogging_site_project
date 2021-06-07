@@ -1,0 +1,51 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Dashboard | {{name}} {% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <h1>Welcome, {{name}}</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <a href="{% url 'create_post' %}"><button class="btn btn-dark">Create Post</button></a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+                    {% if blog_list %}
+                        <table class="table table-hover table-dark">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Post ID</th>
+                                    <th scope="col">Post Title</th>
+                                    <th scope="col">Date Published</th>
+                                    <th scope="col">Action</th>
+                                </tr>
+                            </thead>
+
+                            <tbody>
+                                    {% for item in blog_list %}
+                                        <tr>
+                                            <td scope="row">{{item.id}}</th>
+                                            <td scope="row">{{item.title}}</th>
+                                            <td scope="row">{{item.date_time}}</th>
+                                            <td scope="row"><a href="{% url 'edit_post' item.id %}"><button class="btn btn-warning">Edit</button></a>
+                                            {% if perms.blog.delete_blog %}<a href="{% url 'delete_post' item.id %}"><button class="btn btn-danger">Delete</button></a>{% endif %}</th>
+                                        </tr>
+                                    {% endfor %}
+                            </tbody>
+                        </table>
+                    {% else %}
+                        <p class="warning">You don't have any post created yet. <a class="reg" href="{% url 'create_post' %}">Go create one</a></p>
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock content %}

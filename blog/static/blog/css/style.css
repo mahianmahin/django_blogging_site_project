@@ -1,0 +1,94 @@
+body {
+    background-color: rgb(238, 238, 238);
+}
+
+.logo {
+    font-family: 'Lobster', cursive;
+}
+
+.main {
+    width: 1200px;
+    background-color: white;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 20px;
+}
+
+.form-control:focus {
+    box-shadow: none;
+    border: 3px black solid;
+}
+
+.text-fields {
+    max-width: 400px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.labels {
+    font-size: 23px;
+    margin: 5px 0px 5px 0px;
+}
+
+.button-submit {
+    margin-top: 10px;
+}
+
+.reg {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.error {
+    font-size: 16px;
+    color: rgb(226, 40, 23);
+}
+
+.user {
+    color: white;
+    float: right;
+    border: 1px solid rgb(201, 201, 201);
+    border-radius: 5px;
+    text-align: center;
+}
+
+.author {
+    background-color:rgb(230, 230, 230);
+    text-align: left;
+}
+
+.author-name {
+    color: black;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+.author-admin {
+    border: 1px solid rgb(24, 10, 72);
+    margin-left: 5px;
+    border-radius: 4px;
+    padding: 3px;
+    font-size: 10px;
+    background-color: rgb(24, 10, 72);
+    color: white;
+    font-weight: 600px;
+}
+
+.date {
+    font-size: 12px;
+    color: rgb(44, 44, 44);
+}
+
+.blog-title {
+    text-align: left;
+    font-size: 22px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.blog-content {
+    font-size: 19px;
+    text-align: left;
+}

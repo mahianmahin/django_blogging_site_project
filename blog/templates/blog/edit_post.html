@@ -1,0 +1,23 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Edit post | {{name}} {% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <h1>Edit post</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <form class="form-group" action="" method="post">
+                {% csrf_token %}
+                {{form.as_p}}
+                <input class="btn btn-dark button-submit" type="submit" value="Save">
+                <a href="{% url 'dashboard' %}"><button class="btn btn-danger button-submit">Cancel</button></a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

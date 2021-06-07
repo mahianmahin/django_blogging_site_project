@@ -1,0 +1,26 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Mini-Blogs : Signup{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 text-center main mt-3">
+            <h1>Registration</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center main mt-3">
+            <form action="" method="POST" class="form-group" novalidate>
+                {% csrf_token %}
+                {% for form in form %}
+                    <span class="labels">{{form.label}}</span> <br>
+                    {{form}} <br> {% for error in form.errors %} <span style="color: grey"> {{error | striptags}} </span> {% endfor %} <br>
+                {% endfor %}
+                <input type="submit" class="btn btn-dark button-submit" value="Signup">
+            </form>
+
+        </div>
+    </div>
+{% endblock content %}

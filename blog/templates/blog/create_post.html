@@ -1,0 +1,29 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %}{{name}} | create post{% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <h1>Create a new post</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 main text-center mt-3">
+            <form action="" method="POST" class="form-group" novalidate>
+                {% csrf_token %}
+                {% for form in form %}
+                    <span class="labels">{{form.label}}</span> <br> 
+                    {{form}} <br> {% for error in form.errors %}
+                            <p class="error">{{error | striptags}}</p>
+                        {% endfor %} <br>
+                {% endfor %}
+
+                <input class="btn btn-dark button-submit" type="submit" value="Submit">
+                <a class="btn btn-danger button-submit" href="{% url 'dashboard' %}">Cancel</a>
+            </form>
+        </div>
+    </div>
+{% endblock content %}

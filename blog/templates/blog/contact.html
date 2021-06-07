@@ -1,0 +1,33 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Mini-Blogs : Contact {% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 text-center main mt-3">
+            <h1>Contact</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 main mt-3 text-center">
+            <form class="form-group">
+                <p class="labels">Name</p>
+                <input class="form-control text-fields" type="text" class="txt-fields">
+
+                <p class="labels">Email</p>
+                <input class="form-control text-fields" type="text" class="txt-fields">
+
+                <p class="labels">Subject</p>
+                <input class="form-control text-fields" type="text" class="txt-fields">
+
+                <p class="labels">Your message</p>
+                <textarea class="form-control text-fields msg" rows="5"></textarea>
+                
+                <a href="#"><input type="submit" class="btn btn-dark button-submit" value="Submit"></a>
+                
+            </form>
+        </div>
+    </div>
+{% endblock content %}

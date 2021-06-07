@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark navigation">
+    <a class="navbar-brand logo" href="/">Mini-Blogs</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+        {% if request.user.is_authenticated %}
+            <a class="nav-item nav-link {{home}}" href="/">Home</a>
+            <a class="nav-item nav-link {{dashboard}}" href="{% url 'dashboard' %}">Dashboard</a>
+            <a class="nav-item nav-link {{contact}}" href="{% url 'contact' %}">Contact</a>
+            <a class="nav-item nav-link {{about}}" href="{% url 'about' %}">About</a>
+            <a class="nav-item nav-link " href="{% url 'logout' %}">Logout</a>
+            <span class="nav-item nav-link user">{{name}}</span>
+
+        {% else %}
+            <a class="nav-item nav-link {{home}}" href="/">Home</a>
+            <a class="nav-item nav-link {{contact}}" href="{% url 'contact' %}">Contact</a>
+            <a class="nav-item nav-link {{about}}" href="{% url 'about' %}">About</a>
+            <a class="nav-item nav-link {{login}}" href="{% url 'login' %}">Login</a>
+            <a class="nav-item nav-link {{signup}}" href="{% url 'signup' %}">Signup</a>
+        {% endif %}
+        
+    </div>
+</div>
+</nav>
+

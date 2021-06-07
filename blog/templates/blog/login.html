@@ -1,0 +1,34 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Mini-Blocks : Login {% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 text-center main mt-3">
+            <h1>Login</h1>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center main mt-3">
+            <form action="" method="POST" class="form-group" novalidate>
+                {% csrf_token %}
+                {% for form in form %}
+                    <span class="labels">{{form.label}}</span> <br>
+                    {{form}} <br> {% for error in form.errors %} <span style="color: grey"> {{error | striptags}} </span> {% endfor %} <br>
+                {% endfor %}
+
+                {% if form.non_field_errors %}
+                    {% for error in form.non_field_errors %}
+                        <p class="error">{{error}}</p>
+                    {% endfor %}
+                {% endif %}
+                <input type="submit" class="btn btn-dark button-submit" value="Login"> <br>
+                <p>or <a class="reg" href="{% url 'signup' %}">Register</a></p>
+
+            </form>
+        </div>
+    </div>
+{% endblock content %}
+

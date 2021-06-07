@@ -1,0 +1,32 @@
+{% extends 'blog/base.html' %}
+{% load static %}
+
+{% block title %} Mini-Blogs : Home {% endblock title %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-sm-12 text-cernter main mt-3">
+            <h1 class="logo">Mini-Blogs</h1>
+        </div>
+    </div>
+
+    {% for blog in blog %}
+
+    <div class="row">
+        <div class="con-sm-12 main mt-3">
+            <div class="row">
+                <div class="col-sm-12 main mt-3 author">
+                    <span class="author-name">{{blog.author}}</span>
+                    {% if blog.superuser_status == "True" %}<span class="author-admin">Admin</span>{% endif %} <br>
+                    <span class="date">{{blog.date_time}}</span>
+                </div>
+            </div>
+            <p class="blog-title">{{blog.title}}</p>
+            <p class="blog-content">{{blog.blog}}</p>
+        </div>
+    </div>
+
+    {% endfor %}
+
+
+{% endblock content %}
